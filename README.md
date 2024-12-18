@@ -1,21 +1,57 @@
-Project Overview:
+# MBTA Transit Analysis Project
 
-Topic: MBTA T
+## Additional Resources
+- [Project Presentation and Detailed Report](https://drive.google.com/drive/folders/1-2L4KaZrSI45flOVaamYcYVe1CUu12xS?usp=sharing)
 
-Member Contribution Plan
-https://docs.google.com/document/d/1PY7s0oHUOxmQoOiEZaa57SuRkRvNV2eRGYxZqWiemd4/edit?tab=t.0
+## Overview
+This project analyzes transit accessibility and service distribution across Boston's MBTA subway system, identifying underserved areas and potential expansion opportunities. By combining MBTA transit data with US Census population data, we evaluate transit accessibility and develop recommendations for system improvements.
 
-Overview: 
+## Research Questions
+- Which areas of Boston are most underserved by the MBTA?
+- What areas are the best candidates for system expansion?
 
-We will use the MBTA API alongside the Census API to answer the following questions:
-- What Areas of Boston are most underserved by the MBTA?
-- What areas are good candidates for expansion?
+## Key Findings
+- Chelsea, Everett, South Boston, and Dorchester were identified as significantly underserved areas
+- Machine learning models helped identify patterns in transit accessibility across census blocks
 
-We will implement the following ML models as we answer these questions:
-- Linear regression to score blocks by transit need
-- K-means clustering to group census blocks by MBTA accesibility.
+## Methodology
+### Data Sources
+- MBTA API: Station locations and service data
+- US Census API: Population data for Suffolk, Middlesex, and Norfolk counties
+- MassGIS: Geographic shapefiles for census block mapping
 
-Project report doc: https://docs.google.com/document/d/1ymLeKzcFXzKy8RW5SdfwPnjSafnq-EPYxh09r9yk-WM/edit?usp=sharing
+### Analysis Techniques
+1. **Transit Demand Scoring**
+   - Developed a custom demand score formula: (population_density²) * (distance/800)
+   - Incorporated distance thresholds: 800m minimum (well-served areas) and 10km maximum (beyond rapid transit range)
 
-PowerPoint: https://northeastern-my.sharepoint.com/:p:/r/personal/alarcon_dar_northeastern_edu/Documents/Presentation.pptx?d=wedce3dbccd5d44ee8f7d5ef37251c56d&csf=1&web=1&e=uUgxPD
+2. **Machine Learning Models**
+   - Linear Regression: Predicting transit demand scores
+   - K-means Clustering: Grouping census blocks by accessibility levels
 
+## Tools & Technologies
+- Python
+- Pandas & NumPy for data manipulation
+- Scikit-learn for machine learning models
+- Folium or Mapping
+- GeoPandas for geospatial analysis
+- Matplotlib & Seaborn for visualization
+
+## Setup & Installation
+1. Clone the repository
+2. Install required packages(there's a few):
+3. Set up API keys for MBTA and Census APIs
+4. Run the Jupyter notebook(mainNotebook) to replicate.
+
+## Team Members
+- Sebastian Arteaga (arteaga.s@northeastern.edu)
+- Darwin Alarcon (alarcon.dar@northeastern.edu)
+- Suraj Swamy (swamy.sur@northeastern.edu)
+- Jason Lam (lam.jason@northeastern.edu)
+
+## Acknowledgments
+- Northeastern University DS3000: Foundations of Data Science
+- Dr. Mohit Singhal (m.singhal@northeastern.edu)
+- MBTA for providing access to their API
+- US Census Bureau for population data
+- MassGIS for geospatial data
