@@ -33,7 +33,7 @@ This project analyzes transit accessibility and service distribution across Bost
 - Python
 - Pandas & NumPy for data manipulation
 - Scikit-learn for machine learning models
-- Folium or Mapping
+- Folium for Mapping
 - GeoPandas for geospatial analysis
 - Matplotlib & Seaborn for visualization
 
